@@ -147,7 +147,7 @@ if (!IS_VANILLA && !isLegacyNonAsarVencord) {
         }
     });
 
-    process.env.DATA_DIR = join(app.getPath("userData"), "..", "Equicord");
+    process.env.DATA_DIR = join(app.getPath("userData"), "..", "Revgcord");
 
     // Monkey patch commandLine to:
     // - disable WidgetLayering: Fix DevTools context menus https://github.com/electron/electron/issues/38790

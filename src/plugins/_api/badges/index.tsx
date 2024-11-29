@@ -43,7 +43,7 @@ const ContributorBadge: ProfileBadge = {
 };
 
 const EquicordContributorBadge: ProfileBadge = {
-    description: "Equicord Contributor",
+    description: "Revgcord Contributor",
     image: EQUICORD_CONTRIBUTOR_BADGE,
     position: BadgePosition.START,
     shouldShow: ({ userId }) => isEquicordPluginDev(userId),
@@ -239,7 +239,7 @@ export default definePlugin({
                                         }}
                                     >
                                         <Heart />
-                                        Equicord Donor
+                                        Revgcord Donor
                                     </Forms.FormTitle>
                                 </Flex>
                             </Modals.ModalHeader>
@@ -260,10 +260,10 @@ export default definePlugin({
                                 </Flex>
                                 <div style={{ padding: "1em" }}>
                                     <Forms.FormText>
-                                        This Badge is a special perk for Equicord (Not Vencord) Donors
+                                        This Badge is a special perk for Revgcord Donors
                                     </Forms.FormText>
                                     <Forms.FormText className={Margins.top20}>
-                                        Please consider supporting the development of Equicord by becoming a donor. It would mean a lot! :3
+                                        Please consider supporting the development of Revgcord by becoming a donor. It would mean a lot! :3
                                     </Forms.FormText>
                                 </div>
                             </Modals.ModalContent>

@@ -97,53 +97,53 @@ export default definePlugin({
         return [
             {
                 section: SectionTypes.HEADER,
-                label: "Equicord",
+                label: "Revgcord",
                 className: "vc-settings-header"
             },
             {
-                section: "EquicordSettings",
-                label: "Equicord",
-                searchableTitles: ["Equicord", "Settings", "Equicord Settings"],
+                section: "RevgcordSettings",
+                label: "Revgcord",
+                searchableTitles: ["Revgcord", "Settings", "Revgcord Settings"],
                 element: VencordTab,
                 className: "vc-settings"
             },
             {
-                section: "EquicordPlugins",
+                section: "RevgcordPlugins",
                 label: "Plugins",
                 searchableTitles: ["Plugins"],
                 element: PluginsTab,
                 className: "vc-plugins"
             },
             {
-                section: "EquicordThemes",
+                section: "RevgcordThemes",
                 label: "Themes",
                 searchableTitles: ["Themes"],
                 element: require("@components/ThemeSettings/ThemesTab").default,
                 className: "vc-themes"
             },
             !IS_UPDATER_DISABLED && {
-                section: "EquicordUpdater",
+                section: "RevgcordUpdater",
                 label: "Updater",
                 searchableTitles: ["Updater"],
                 element: UpdaterTab,
                 className: "vc-updater"
             },
             {
-                section: "EquicordCloud",
+                section: "RevgcordCloud",
                 label: "Cloud",
                 searchableTitles: ["Cloud"],
                 element: CloudTab,
                 className: "vc-cloud"
             },
             {
-                section: "EquicordSettingsSync",
+                section: "RevgcordSettingsSync",
                 label: "Backup & Restore",
                 searchableTitles: ["Backup & Restore"],
                 element: BackupAndRestoreTab,
                 className: "vc-backup-restore"
             },
             {
-                section: "EquicordPatchHelper",
+                section: "RevgcordPatchHelper",
                 label: "Patch Helper",
                 searchableTitles: ["Patch Helper"],
                 element: PatchHelperTab,
@@ -209,7 +209,7 @@ export default definePlugin({
     options: {
         settingsLocation: {
             type: OptionType.SELECT,
-            description: "Where to put the Equicord settings section",
+            description: "Where to put the Revgcord settings section",
             options: [
                 { label: "At the very top", value: "top" },
                 { label: "Above the Nitro section", value: "aboveNitro", default: true },
@@ -248,7 +248,7 @@ export default definePlugin({
     getInfoRows() {
         const { electronVersion, chromiumVersion, additionalInfo } = this;
 
-        const rows = [`Equicord ${gitHash}${additionalInfo}`];
+        const rows = [`Revgcord ${gitHash}${additionalInfo}`];
 
         if (electronVersion) rows.push(`Electron ${electronVersion}`);
         if (chromiumVersion) rows.push(`Chromium ${chromiumVersion}`);

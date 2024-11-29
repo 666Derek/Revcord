@@ -97,7 +97,7 @@ async function generateDebugInfoMessage() {
     const commonIssues = {
         "NoRPC enabled": Vencord.Plugins.isPluginEnabled("NoRPC"),
         "Activity Sharing disabled": tryOrElse(() => !ShowCurrentGame.getSetting(), false),
-        "Equicord DevBuild": !IS_STANDALONE,
+        "Revgcord DevBuild": !IS_STANDALONE,
         "Has UserPlugins": Object.values(PluginMeta).some(m => m.userPlugin),
         "More than two weeks out of date": BUILD_TIMESTAMP < Date.now() - 12096e5,
     };
@@ -156,15 +156,15 @@ export default definePlugin({
 
     commands: [
         {
-            name: "equicord-debug",
-            description: "Send Equicord debug info",
+            name: "revgcord-debug",
+            description: "Send Revgcord debug info",
             // @ts-ignore
             predicate: ctx => isPluginDev(UserStore.getCurrentUser()?.id) || isEquicordPluginDev(UserStore.getCurrentUser()?.id) || GUILD_ID === ctx?.guild?.id,
             execute: async () => ({ content: await generateDebugInfoMessage() })
         },
         {
-            name: "equicord-plugins",
-            description: "Send Equicord plugin list",
+            name: "revgcord-plugins",
+            description: "Send Revgcord plugin list",
             // @ts-ignore
             predicate: ctx => isPluginDev(UserStore.getCurrentUser()?.id) || isEquicordPluginDev(UserStore.getCurrentUser()?.id) || GUILD_ID === ctx?.guild?.id,
             execute: () => ({ content: generatePluginList() })
@@ -188,9 +188,9 @@ export default definePlugin({
                         <img src="https://media.tenor.com/QtGqjwBpRzwAAAAi/wumpus-dancing.gif" />
                         <Forms.FormText>Before you ask for help,</Forms.FormText>
                         <Forms.FormText>Check for updates and if this</Forms.FormText>
-                        <Forms.FormText>issue could be caused by Equicord!</Forms.FormText>
+                        <Forms.FormText>issue could be caused by Revgcord!</Forms.FormText>
                     </div>,
-                    confirmText: "Go to Equicord Support",
+                    confirmText: "Go to Revgcord Support",
                     cancelText: "Okay continue",
                     onConfirm: () => VencordNative.native.openExternal("https://discord.gg/npnv52UQwY"),
                 });
@@ -203,7 +203,7 @@ export default definePlugin({
                     return Alerts.show({
                         title: "Hold on!",
                         body: <div>
-                            <Forms.FormText>You are using an outdated version of Equicord! Chances are, your issue is already fixed.</Forms.FormText>
+                            <Forms.FormText>You are using an outdated version of Revgcord! Chances are, your issue is already fixed.</Forms.FormText>
                             <Forms.FormText className={Margins.top8}>
                                 Please first update before asking for support!
                             </Forms.FormText>
@@ -225,10 +225,10 @@ export default definePlugin({
                 return Alerts.show({
                     title: "Hold on!",
                     body: <div>
-                        <Forms.FormText>You are using an externally updated Equicord version, the ability to help you here may be limited.</Forms.FormText>
+                        <Forms.FormText>You are using an externally updated Revgcord version, the ability to help you here may be limited.</Forms.FormText>
                         <Forms.FormText className={Margins.top8}>
-                            Please join the <Link href="https://discord.gg/5Xh2W87egW">Equicord Server</Link> for support,
-                            or if this issue persists on Vencord, continue on.
+                            Please join the <Link href="https://discord.gg/revgng">Revgcord Server</Link> for support,
+                            or if this issue persists on revgang, continue on.
                         </Forms.FormText>
                     </div>
                 });
@@ -238,7 +238,7 @@ export default definePlugin({
                 return Alerts.show({
                     title: "Hold on!",
                     body: <div>
-                        <Forms.FormText>You are using a custom build of Equicord, which we do not provide support for!</Forms.FormText>
+                        <Forms.FormText>You are using a custom build of Revgcord, which we do not provide support for!</Forms.FormText>
 
                         <Forms.FormText className={Margins.top8}>
                             We only provide support for <Link href="https://github.com/Equicord/Equicord">official builds</Link>.
@@ -271,7 +271,7 @@ export default definePlugin({
     }, { noop: true }),
 
     start() {
-        addAccessory("equicord-debug", props => {
+        addAccessory("revgcord-debug", props => {
             const buttons = [] as JSX.Element[];
 
             const shouldAddUpdateButton =
