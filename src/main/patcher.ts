@@ -24,7 +24,7 @@ import { initIpc } from "./ipcMain";
 import { RendererSettings } from "./settings";
 import { IS_VANILLA } from "./utils/constants";
 
-console.log("[Equicord] Starting up...");
+console.log("[RevgCord] Starting up...");
 
 // FIXME: remove at some point
 const isLegacyNonAsarVencord = IS_STANDALONE && !__dirname.endsWith(".asar");
@@ -172,10 +172,10 @@ if (!IS_VANILLA && !isLegacyNonAsarVencord) {
     app.commandLine.appendSwitch("disable-background-timer-throttling");
     app.commandLine.appendSwitch("disable-backgrounding-occluded-windows");
 } else {
-    console.log("[Equicord] Running in vanilla mode. Not loading Equicord");
+    console.log("[RevgCord] Running in vanilla mode. Not loading RevgCord");
 }
 
 if (!isLegacyNonAsarVencord) {
-    console.log("[Equicord] Loading original Discord app.asar");
+    console.log("[RevgCord] Loading original Discord app.asar");
     require(require.main!.filename);
 }
